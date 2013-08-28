@@ -10,8 +10,7 @@ var markSet;
 try {
 	markSet = JSON.parse(fs.readFileSync(markFile, {encoding: 'utf8'}));
 }catch(e){
-	markSet = { }
+	process.exit("no marked destinations found");
 }
 
-markSet[markName] = directory;
-fs.writeFileSync(markFile, JSON.stringify(markSet))
+console.log(markSet[markName]);
