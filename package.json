@@ -1,7 +1,30 @@
 {
   "name": "gotomark",
-  "version": "0.0.0",
+	"author": "Evan Short",
+	"description": "command line program for marking directories from the command line for quick and easy access",
+  "version": "0.1.0",
+	"bin": {
+		"mark": "bin/mark",
+		"gotomark": "bin/gotomark"
+	},
+	"scripts": {
+		"postinstall":"./install.js"
+	},
+ "preferGlobal": true,
+ "repository": {
+	 "type": "git",
+	 "url" : "https://github.com/whtevn/gotomark.git"
+ },
+ "bugs": {
+		"url": "https://github.com/whtevn/gotomark/issues"
+	},
+ "licenses": [
+		{
+			"type": "MIT",
+			"url": "https://github.com/whtevn/gotomark/blob/master/LICENSE"
+		}
+	],
   "engines": {
     "node": ">=0.8.0"
-  },
+  }
 }
