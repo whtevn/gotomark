@@ -1,9 +1,5 @@
 TODO: finish install script
 
-TODO: finish npm package
-
-TODO: publish to npm
-
 TODO: add tab completion to goto
       node does this by 
 			source ~/local/node/lib/node_modules/npm/lib/utils/completion.sh
@@ -12,11 +8,8 @@ TODO: add tab completion to goto
 
 TODO: add -d command to mark command to delete a mark
      
-TODO: complete readme and add help
-
 TODO: warn before overwriting mark
       if mark is same as previous, print message saying so
-
 
 TODO: add -t command to get the mark name for this directory
 
@@ -24,3 +17,6 @@ TODO: add -r command to rename the mark for this directory
 
 TODO: look into https://github.com/substack/node-optimist
      
+TODO: fail nicer if no such place is found (also, return '.' so the user stays put)
+
+TODO: keep track of how many times each marker is accessed
