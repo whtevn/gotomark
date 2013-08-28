@@ -24,3 +24,4 @@ TODO: add -r command to rename the mark for this directory
 
 TODO: look into https://github.com/substack/node-optimist
      
+TODO: fail nicer if no such place is found (also, return '.' so the user stays put)
