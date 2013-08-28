@@ -2,7 +2,6 @@
 
 var fs = require('fs');
 var homedir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
-var directory = process.argv[3]||process.cwd();
 var markName=process.argv[2]||"default";
 var markFile=homedir+"/.marked_destinations";
 var markSet;
@@ -13,4 +12,4 @@ try {
 	process.exit("no marked destinations found");
 }
 
-console.log(markSet[markName]);
+process.stdout.write(markSet[markName]);
