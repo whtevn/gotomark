@@ -1,5 +1,3 @@
-command line program for marking directories from the command line for quick and easy access
-
 TODO: finish install script
 
 TODO: finish npm package
@@ -18,3 +16,11 @@ TODO: complete readme and add help
 
 TODO: warn before overwriting mark
       if mark is same as previous, print message saying so
+
+
+TODO: add -t command to get the mark name for this directory
+
+TODO: add -r command to rename the mark for this directory
+
+TODO: look into https://github.com/substack/node-optimist
+     
