@@ -8,7 +8,7 @@ var markFile=homedir+"/.marked_destinations";
 var markSet;
 
 try {
-	markSet = JSON.parse(fs.readFileSync(markFile, {encoding: 'utf8'}));
+	markSet = JSON.parse(fs.readFileSync(markFile, 'utf8'));
 }catch(e){
 	markSet = { }
 }
