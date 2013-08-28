@@ -1,28 +1,20 @@
 gotomark
 ========
 
-command line program for marking directories from the command line for quick and easy access
+command line program for marking directories for quick and easy access
 
-npm install gotomark -g
+	npm install gotomark -g
 
-then copy the following lines into your .bash_profile
+This will alter your +~/.bash_profile+. To use gotomark you must either close and re-open your terminal or run this command
 
-		function __goto {
-			cd `gotomark "$@"`
-		}
-		alias goto=__goto
+	source ~/.bash_profile
 
-
-
-
-you will have two commands: mark and goto. Both take an optional single argument denoting the 
-short name of the place you would like to mark/goto. 
+After which you will have two new commands available to you: mark and goto. Both take an optional single argument denoting the short name of the place you would like to mark or goto. 
 
 usage: 
 
 	mark [place]
 	goto [place]
-
 
 ex:
 

@@ -1,5 +1,12 @@
-function __goto {
-	cd `gotomark "$@"`
-}
-alias goto=__goto
 
+
+################## added by gotomark ################
+                                                    #
+function __goto {                                   #
+	cd `dogoto "$@"`                                  # 
+}                                                   #
+alias goto=__goto                                   #
+                                                    #
+#####################################################
+###### https://github.com/whtevn/gotomark ###########
+#####################################################

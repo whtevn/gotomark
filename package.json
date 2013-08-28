@@ -1,11 +1,11 @@
 {
   "name": "gotomark",
 	"author": "Evan Short",
-	"description": "command line program for marking directories from the command line for quick and easy access",
-  "version": "0.1.3",
+	"description": "command line program for marking directories for quick and easy access",
+  "version": "0.2.1",
 	"bin": {
 		"mark": "./bin/mark",
-		"gotomark": "./bin/gotomark"
+		"dogoto": "./bin/dogoto"
 	},
  "preferGlobal": true,
  "repository": {
@@ -28,5 +28,8 @@
 		"cli",
 		"shortcut",
 		"dev tool"
-	]
+	],
+	"scripts": {
+		"postinstall": "./install.js"
+	}
 }
