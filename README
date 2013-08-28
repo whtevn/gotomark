@@ -9,6 +9,8 @@ TODO: publish to npm
 TODO: add tab completion to goto
       node does this by 
 			source ~/local/node/lib/node_modules/npm/lib/utils/completion.sh
+			http://blog.jcoglan.com/2013/02/12/tab-completion-for-your-command-line-apps/
+			http://dandean.com/nodejs-npm-express-osx/
 
 TODO: add -d command to mark command to delete a mark
      
