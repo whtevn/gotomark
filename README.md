@@ -26,13 +26,13 @@ usage:
 
 ex:
 
-	evan@~$ cd dev/                       # currently in home dir
+	evan@~$ cd dev/                      # currently in home dir
 
-	evan@dev$ mark                        # marking dev/ as default
+	evan@dev$ mark                       # marking dev/ as default
 
-	evan@dev$ cd                          # going back to home dir
+	evan@dev$ cd                         # going back to home dir
 
-	evan@~$ goto                          # going to default [~/dev/]
+	evan@~$ goto                         # going to default [~/dev/]
 
 	evan@dev$ cd gotomark/               # going to a new dir
 
