@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var sys = require('sys')
+var exec = require('child_process').exec;
+var homedir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
+var directory = process.argv[3]||process.env.PWD;
+var markName=process.argv[2]||"default";
+var buffer, markFile=homedir+"/.marked_destinations", offset=0, position=null;
+
+// if homedir doesn't exist, throw error
+
+
+var markSet 
+try {
+	markSet = JSON.parse(fs.readFileSync(markFile, {encoding: 'utf8'}));
+}catch(e){
+	markSet = { }
+}
+
+markSet[markName] = directory;
+fs.writeFileSync(markFile, JSON.stringify(markSet))
