@@ -5,7 +5,6 @@ var homedir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFIL
 var profile=homedir+"/.bash_profile";
 var installer='./etc/profile_update';
 
-
 fs.readFile(installer, {encoding: 'utf8'}, function(err, data){
-	fs.writeFileSync(profile, data, {flag: 'a'});
+	fs.createWriteStream(profile, {'flags': 'a'}).write(data);;
 });
