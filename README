@@ -1,1 +1,18 @@
 command line program for marking directories from the command line for quick and easy access
+
+TODO: finish install script
+
+TODO: finish npm package
+
+TODO: publish to npm
+
+TODO: add tab completion to goto
+      node does this by 
+			source ~/local/node/lib/node_modules/npm/lib/utils/completion.sh
+
+TODO: add -d command to mark command to delete a mark
+     
+TODO: complete readme and add help
+
+TODO: warn before overwriting mark
+      if mark is same as previous, print message saying so
