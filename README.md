@@ -19,11 +19,13 @@ you will have two commands: mark and goto. Both take an optional single argument
 short name of the place you would like to mark/goto. 
 
 usage: 
+
 	mark [place]
 	goto [place]
 
 
 ex:
+
 	evan@~$ cd dev/ # currently in home dir
 
 	evan@dev$ mark  # marking dev/ as default
