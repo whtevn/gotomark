@@ -6,11 +6,13 @@ var profile=homedir+"/.bash_profile";
 var installer='./etc/profile_update';
 
 fs.readFile(installer, {encoding: 'utf8'}, function(err, data){
-	fs.createWriteStream(profile, {'flags': 'a'}).write(data);;
+	fs.createWriteStream(profile, {'flags': 'a'}).write(data, 'utf8', function(err, data){
+		if(err) throw(err);
+		console.log("\n#######################################\n#");
+		console.log("# Installation Success, I presume\n#");
+		console.log("# Now Run this command:");
+		console.log("# \tsource ~/.bash_profile");
+		console.log("#\n#######################################\n");
+	});;
 });
 
-console.log("\n#######################################\n#");
-console.log("# Installation Success, I presume\n#");
-console.log("# Now Run this command:");
-console.log("# \tsource ~/.bash_profile");
-console.log("#\n#######################################\n");

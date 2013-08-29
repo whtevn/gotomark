@@ -2,7 +2,7 @@
   "name": "gotomark",
 	"author": "Evan Short",
 	"description": "command line program for marking directories for quick and easy access",
-  "version": "0.2.2",
+  "version": "0.2.3",
 	"bin": {
 		"mark": "./bin/mark",
 		"dogoto": "./bin/dogoto"
@@ -22,7 +22,7 @@
 		}
 	],
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=0.10.12"
   },
  "keywords": [
 		"cli",

@@ -3,6 +3,8 @@ xTODO: fail nicer if no such place is found (also, return '.' so the user stays 
 xTODO: warn before overwriting mark
       if mark is same as previous, print message saying so
 
+TODO: find problem with install script through npm on node<0.10.12
+
 TODO: add -d command to mark command to delete a mark
 			look into https://github.com/substack/node-optimist
 
