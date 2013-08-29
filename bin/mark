@@ -6,6 +6,13 @@ var directory = process.argv[3]||process.cwd();
 var markName=process.argv[2]||"default";
 var markFile=homedir+"/.marked_destinations";
 var markSet;
+var readline = require('readline');
+
+var rl = readline.createInterface({
+  input: process.stdin,
+	output: process.stdout
+});
+
 
 try {
 	markSet = JSON.parse(fs.readFileSync(markFile, 'utf8'));
@@ -13,5 +20,18 @@ try {
 	markSet = { }
 }
 
-markSet[markName] = directory;
-fs.writeFileSync(markFile, JSON.stringify(markSet))
+if(markSet[markName]){
+	rl.question("would you like to overwrite it? [ Y/n ] ", function(answer) {
+		if(answer.toLowerCase().trim()!='n'){
+			markSet[markName] = directory;
+			console.error("overwriting marker");
+			fs.writeFileSync(markFile, JSON.stringify(markSet))
+		}else{
+			console.error("exiting");
+		}
+		rl.close();
+	});
+}else{
+	markSet[markName] = directory;
+	fs.writeFileSync(markFile, JSON.stringify(markSet))
+}

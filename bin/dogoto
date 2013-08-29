@@ -12,4 +12,9 @@ try {
 	process.exit("no marked destinations found");
 }
 
-process.stdout.write(markSet[markName]);
+if(markSet[markName]){
+	process.stdout.write(markSet[markName]);
+}else{
+	console.error("no mark called "+markName+" found");
+	process.stdout.write('.');
+}
