@@ -27,7 +27,8 @@
  "keywords": [
 		"cli",
 		"shortcut",
-		"dev tool"
+		"utility",
+		"tool"
 	],
 	"scripts": {
 		"postinstall": "./install.js"
