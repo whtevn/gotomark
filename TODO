@@ -1,6 +1,6 @@
-TODO: fail nicer if no such place is found (also, return '.' so the user stays put)
+xTODO: fail nicer if no such place is found (also, return '.' so the user stays put)
 
-TODO: warn before overwriting mark
+xTODO: warn before overwriting mark
       if mark is same as previous, print message saying so
 
 TODO: add -d command to mark command to delete a mark
