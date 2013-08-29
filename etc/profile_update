@@ -1,12 +1,13 @@
 
 
+
 ################## added by gotomark ################
-                                                    #
-function __goto {                                   #
-	cd `dogoto "$@"`                                  # 
-}                                                   #
-alias goto=__goto                                   #
-                                                    #
+#                                                   #
+                function __goto {                   #
+                  cd `dogoto "$@"`                  #
+                }                                   #
+                alias goto=__goto                   #
+#                                                   #
 #####################################################
 ###### https://github.com/whtevn/gotomark ###########
 #####################################################
