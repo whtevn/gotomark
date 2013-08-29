@@ -8,13 +8,8 @@ TODO: add -d command to mark command to delete a mark
 
 TODO: add -n command to get the mark name for this directory
 
-TODO: add -r command to rename the mark for this directory
-
-TODO: add tab completion to goto
-      node does this by 
-			source ~/local/node/lib/node_modules/npm/lib/utils/completion.sh
-			http://blog.jcoglan.com/2013/02/12/tab-completion-for-your-command-line-apps/
-			http://dandean.com/nodejs-npm-express-osx/
+TODO: if directory already has mark, give message saying so
+      tell them they can run the -d command to get rid of one if they want
 
 TODO: make installer script interactive
 			- make installer script interactive
@@ -24,6 +19,12 @@ TODO: make installer script interactive
 					- if so, sourced where
 
 TODO: make uninstall scripts
+
+TODO: add tab completion to goto
+      node does this by 
+			source ~/local/node/lib/node_modules/npm/lib/utils/completion.sh
+			http://blog.jcoglan.com/2013/02/12/tab-completion-for-your-command-line-apps/
+			http://dandean.com/nodejs-npm-express-osx/
 
 TODO: keep track of how many times each marker is accessed
 			- kill the sections in the bash_profile with comments
