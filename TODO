@@ -8,6 +8,13 @@ TODO: add -d command to mark command to delete a mark
 
 TODO: add -n command to get the mark name for this directory
 
+TODO: add -l command to list all marks, also allow arg to do partial search
+      - stopgap until tab completion
+
+TODO: make work as long as string is unique and matches only one mark
+
+TODO: find problem with install script through npm on node<0.10.12
+
 TODO: if directory already has mark, give message saying so
       tell them they can run the -d command to get rid of one if they want
 
@@ -19,6 +26,8 @@ TODO: make installer script interactive
 					- if so, sourced where
 
 TODO: make uninstall scripts
+
+TODO: test uninstall, install, and upgrade
 
 TODO: add tab completion to goto
       node does this by 
