@@ -3,20 +3,21 @@ xTODO: fail nicer if no such place is found (also, return '.' so the user stays 
 xTODO: warn before overwriting mark
       if mark is same as previous, print message saying so
 
-TODO: add -d command to mark command to delete a mark
+xTODO: add -d command to mark command to delete a mark
 			look into https://github.com/substack/node-optimist
+
+xTODO: add -l command to list all marks, also allow arg to do partial search
+      - stopgap until tab completion
+
+xTODO: make work as long as string is unique and matches only one mark
+       - actually made it so it goes to first found match
+
+xTODO: if directory already has mark, give message saying so
 
 TODO: add -n command to get the mark name for this directory
 
-TODO: add -l command to list all marks, also allow arg to do partial search
-      - stopgap until tab completion
-
-TODO: make work as long as string is unique and matches only one mark
-
 TODO: find problem with install script through npm on node<0.10.12
 
-TODO: if directory already has mark, give message saying so
-      tell them they can run the -d command to get rid of one if they want
 
 TODO: make installer script interactive
 			- make installer script interactive
@@ -37,3 +38,6 @@ TODO: add tab completion to goto
 
 TODO: keep track of how many times each marker is accessed
 			- kill the sections in the bash_profile with comments
+
+TODO: add ability to add files as locations to mark
+      - open with env.editor
