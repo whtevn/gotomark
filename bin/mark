@@ -2,11 +2,21 @@
 
 var argv = require('optimist')
 	.boolean('l', {
-		alias: 'list'}).argv;
+		alias: 'list'
+	})
+	.options('d', {
+		alias: 'delete'
+	})
+	.options('h', {
+		alias: 'help'
+	}) 
+	.argv;
+
+
 var fs = require('fs');
 var homedir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
 var directory = process.argv[3]||process.cwd();
-var markName=process.argv[2]||"default";
+var markTest, markName=process.argv[2]||"default";
 var markFile=homedir+"/.marked_destinations";
 var readline = require('readline');
 var markSet;
@@ -30,6 +40,14 @@ if(argv.l || argv.list){
 
 if(argv.d || argv.del || argv.delete){
 	markName = argv.d || argv.del || argv.delete; 
+	if(markName === true){
+		for(markTest in markSet){
+			if(markSet[markTest] == process.cwd()){
+				markName = markTest;
+				break;
+			}
+		}
+	}
 	if(markSet[markName]){
 		delete markSet[markName];
 		fs.writeFile(markFile, JSON.stringify(markSet, null, '\t'), {}, function(){
@@ -42,7 +60,7 @@ if(argv.d || argv.del || argv.delete){
 	}
 }
 
-if(!argv.d && !argv.del && !argv.delete && !argv.l && !argv.list){
+if(!argv.h && !argv.help && !argv.d && !argv.del && !argv.delete && !argv.l && !argv.list){
 	setMark(markName);
 }
 

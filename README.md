@@ -5,16 +5,27 @@ command line program for marking directories for quick and easy access
 
 	npm install gotomark -g
 
-This will alter your +~/.bash_profile+. To use gotomark you must either close and re-open your terminal or run this command
+This will alter your ~/.bash_profile. To use gotomark you must either close and re-open your terminal or run this command
 
 	source ~/.bash_profile
 
 After which you will have two new commands available to you: mark and goto. Both take an optional single argument denoting the short name of the place you would like to mark or goto. 
 
-usage: 
+basic usage: 
 
 	mark [place]
 	goto [place]
+
+list marks
+
+	mark -l
+	goto -l      # these do the same thing
+
+delete mark
+	
+	mark -d [markName]  # mark name has to be exact
+
+	mark -d             # find the markname for the current directory and delete it
 
 ex:
 
