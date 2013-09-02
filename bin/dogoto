@@ -4,17 +4,25 @@ var fs = require('fs');
 var homedir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
 var markName=process.argv[2]||"default";
 var markFile=homedir+"/.marked_destinations";
-var markSet;
+var markTest, markSet, findPattern, foundSet = [];
+
 
 try {
 	markSet = JSON.parse(fs.readFileSync(markFile, 'utf8'));
 }catch(e){
-	process.exit("no marked destinations found");
+	process.exit();
 }
 
 if(markSet[markName]){
 	process.stdout.write(markSet[markName]);
 }else{
+	findPattern = new RegExp(markName);
+	for(markTest in markSet){
+		if(findPattern.exec(markTest)){
+			process.stdout.write(markSet[markTest]);
+			process.exit();
+		}
+	}
 	console.error("no mark called "+markName+" found");
 	process.stdout.write('.');
 }
