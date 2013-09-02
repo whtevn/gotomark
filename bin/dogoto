@@ -28,7 +28,7 @@ if(markSet[markName]){
 }else{
 	findPattern = new RegExp(markName);
 	for(markTest in markSet){
-		if(findPattern.exec(markTest)){
+		if(findPattern.exec(markTest) && markTest != 'default'){
 			process.stdout.write(markSet[markTest]);
 			process.exit();
 		}
