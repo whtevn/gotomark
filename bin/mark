@@ -2,7 +2,17 @@
 
 var argv = require('optimist')
 	.boolean('l', {
-		alias: 'list'}).argv;
+		alias: 'list'
+	})
+	.options('d', {
+		alias: 'delete'
+	})
+	.options('h', {
+		alias: 'help'
+	}) 
+	.argv;
+
+
 var fs = require('fs');
 var homedir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
 var directory = process.argv[3]||process.cwd();
@@ -50,7 +60,7 @@ if(argv.d || argv.del || argv.delete){
 	}
 }
 
-if(!argv.d && !argv.del && !argv.delete && !argv.l && !argv.list){
+if(!argv.h && !argv.help && !argv.d && !argv.del && !argv.delete && !argv.l && !argv.list){
 	setMark(markName);
 }
 
