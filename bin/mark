@@ -32,7 +32,7 @@ if(argv.d || argv.del || argv.delete){
 	markName = argv.d || argv.del || argv.delete; 
 	if(markSet[markName]){
 		delete markSet[markName];
-		fs.writeFile(markFile, JSON.stringify(markSet), {}, function(){
+		fs.writeFile(markFile, JSON.stringify(markSet, null, '\t'), {}, function(){
 			console.log('deleted mark named "'+markName+'"');
 			process.exit();
 		});
@@ -52,7 +52,7 @@ function setMark(markName){
 			if(answer.toLowerCase().trim()!='n'){
 				markSet[markName] = directory;
 				console.error("overwriting marker");
-				fs.writeFileSync(markFile, JSON.stringify(markSet))
+				fs.writeFileSync(markFile, JSON.stringify(markSet, null, '\t'))
 			}else{
 				console.error("exiting");
 			}
@@ -60,7 +60,7 @@ function setMark(markName){
 		});
 	}else{
 		markSet[markName] = directory;
-		fs.writeFileSync(markFile, JSON.stringify(markSet))
+		fs.writeFileSync(markFile, JSON.stringify(markSet, null, '\t'))
 		process.exit();
 	}
 }
