@@ -1,20 +1,48 @@
 #!/usr/bin/env node
 
+var argv = require('optimist')
+	.boolean('l', {
+		alias: 'list'}).argv;
+
 var fs = require('fs');
 var homedir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
-var markName=process.argv[2]||"default";
+var markName=argv._[0]||"default";
 var markFile=homedir+"/.marked_destinations";
-var markSet;
+var markTest, markSet, markMatches = [], findPattern, foundSet = [];
+
 
 try {
 	markSet = JSON.parse(fs.readFileSync(markFile, 'utf8'));
 }catch(e){
-	process.exit("no marked destinations found");
+	process.exit();
+}
+
+if(argv.m || argv.mark){
+	for(markTest in markSet){
+		if(markTest != 'default' && markSet.hasOwnProperty(markTest)){
+			markMatches.push(markTest);
+		}
+	}
+	process.stdout.write(markMatches.join(" "));
+	process.exit();
+}
+
+if(argv.l || argv.list){
+	console.error(JSON.stringify(markSet, null, '\t'));
+	process.stdout.write('.');
+	process.exit();
 }
 
 if(markSet[markName]){
 	process.stdout.write(markSet[markName]);
 }else{
+	findPattern = new RegExp(markName);
+	for(markTest in markSet){
+		if(markSet.hasOwnProperty(markTest) && findPattern.exec(markTest) && markTest != 'default'){
+			process.stdout.write(markSet[markTest]);
+			process.exit();
+		}
+	}
 	console.error("no mark called "+markName+" found");
 	process.stdout.write('.');
 }
