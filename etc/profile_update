@@ -3,10 +3,19 @@
 
 ################## added by gotomark ################
 #                                                   #
-                function __goto {                   #
-                  cd `dogoto "$@"`                  #
-                }                                   #
-                alias goto=__goto                   #
+###### attaches goto command to dogoto printer ######
+		function __goto {                               #
+			cd `dogoto "$@"`                              #
+		}                                               #
+		alias goto=__goto                               #
+#                                                   #
+########## bash completion for goto command #########
+		function _goto {                                #
+			local cur=${COMP_WORDS[COMP_CWORD]}           #
+			local opts=`dogoto -m`                        #
+			COMPREPLY=( $(compgen -W "$opts"  -- $cur) )  #
+		}                                               #
+		complete -F _goto goto                          #
 #                                                   #
 #####################################################
 ###### https://github.com/whtevn/gotomark ###########

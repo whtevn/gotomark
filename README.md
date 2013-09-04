@@ -49,5 +49,16 @@ ex:
 	/Users/evan/dev/gotomark
 
 
+==Thanks to
+
+Options parsing
+https://github.com/substack/node-optimist
+
+
+Bash Completion
+http://fahdshariff.blogspot.com/2011/04/writing-your-own-bash-completion.html
+
+
+
 
 
