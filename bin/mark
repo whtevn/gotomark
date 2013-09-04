@@ -1,12 +1,25 @@
 #!/usr/bin/env node
 
+var argv = require('optimist')
+	.boolean('l', {
+		alias: 'list'
+	})
+	.options('d', {
+		alias: 'delete'
+	})
+	.options('h', {
+		alias: 'help'
+	}) 
+	.argv;
+
+
 var fs = require('fs');
 var homedir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
 var directory = process.argv[3]||process.cwd();
-var markName=process.argv[2]||"default";
+var markTest, markName=process.argv[2]||"default";
 var markFile=homedir+"/.marked_destinations";
-var markSet;
 var readline = require('readline');
+var markSet;
 
 var rl = readline.createInterface({
   input: process.stdin,
@@ -20,18 +33,52 @@ try {
 	markSet = { }
 }
 
-if(markSet[markName]){
-	rl.question("would you like to overwrite it? [ Y/n ] ", function(answer) {
-		if(answer.toLowerCase().trim()!='n'){
-			markSet[markName] = directory;
-			console.error("overwriting marker");
-			fs.writeFileSync(markFile, JSON.stringify(markSet))
-		}else{
-			console.error("exiting");
+if(argv.l || argv.list){
+	console.log(JSON.stringify(markSet, null, '\t'));
+	process.exit();
+}
+
+if(argv.d || argv.del || argv.delete){
+	markName = argv.d || argv.del || argv.delete; 
+	if(markName === true){
+		for(markTest in markSet){
+			if(markSet[markTest] == process.cwd()){
+				markName = markTest;
+				break;
+			}
 		}
-		rl.close();
-	});
-}else{
-	markSet[markName] = directory;
-	fs.writeFileSync(markFile, JSON.stringify(markSet))
+	}
+	if(markSet[markName]){
+		delete markSet[markName];
+		fs.writeFile(markFile, JSON.stringify(markSet, null, '\t'), {}, function(){
+			console.log('deleted mark named "'+markName+'"');
+			process.exit();
+		});
+	}else{
+		console.log('no mark found named "'+markName+'"');
+		process.exit();
+	}
+}
+
+if(!argv.h && !argv.help && !argv.d && !argv.del && !argv.delete && !argv.l && !argv.list){
+	setMark(markName);
+}
+
+function setMark(markName){
+	if(markSet[markName]){
+		rl.question("a mark named "+markName+" already exists.\n\twould you like to overwrite it? [ Y/n ] ", function(answer) {
+			if(answer.toLowerCase().trim()!='n'){
+				markSet[markName] = directory;
+				console.error("overwriting marker");
+				fs.writeFileSync(markFile, JSON.stringify(markSet, null, '\t'))
+			}else{
+				console.error("exiting");
+			}
+			rl.close();
+		});
+	}else{
+		markSet[markName] = directory;
+		fs.writeFileSync(markFile, JSON.stringify(markSet, null, '\t'))
+		process.exit();
+	}
 }

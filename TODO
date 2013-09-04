@@ -1,20 +1,4 @@
-xTODO: fail nicer if no such place is found (also, return '.' so the user stays put)
-
-xTODO: warn before overwriting mark
-      if mark is same as previous, print message saying so
-
-TODO: add -d command to mark command to delete a mark
-			look into https://github.com/substack/node-optimist
-
-TODO: add -n command to get the mark name for this directory
-
-TODO: add -r command to rename the mark for this directory
-
-TODO: add tab completion to goto
-      node does this by 
-			source ~/local/node/lib/node_modules/npm/lib/utils/completion.sh
-			http://blog.jcoglan.com/2013/02/12/tab-completion-for-your-command-line-apps/
-			http://dandean.com/nodejs-npm-express-osx/
+TODO: add file goto
 
 TODO: make installer script interactive
 			- make installer script interactive
@@ -25,5 +9,43 @@ TODO: make installer script interactive
 
 TODO: make uninstall scripts
 
+TODO: test uninstall, install, and upgrade
+
+TODO: add -n command to get the mark name for this directory
+
+TODO: find problem with install script through npm on node<0.10.12
+
+
 TODO: keep track of how many times each marker is accessed
 			- kill the sections in the bash_profile with comments
+
+TODO: add ability to add files as locations to mark
+      - open with env.editor
+
+TODO: make code not terrible? it is really terrible.
+
+done:
+xTODO: add tab completion to goto
+      node does this by 
+			source ~/local/node/lib/node_modules/npm/lib/utils/completion.sh
+			http://blog.jcoglan.com/2013/02/12/tab-completion-for-your-command-line-apps/
+			http://dandean.com/nodejs-npm-express-osx/
+
+
+xTODO: fail nicer if no such place is found (also, return '.' so the user stays put)
+
+xTODO: warn before overwriting mark
+      if mark is same as previous, print message saying so
+
+xTODO: add -d command to mark command to delete a mark
+			look into https://github.com/substack/node-optimist
+
+xTODO: add -l command to list all marks, also allow arg to do partial search
+      - stopgap until tab completion
+
+xTODO: make work as long as string is unique and matches only one mark
+       - actually made it so it goes to first found match
+
+xTODO: if directory already has mark, give message saying so
+
+
