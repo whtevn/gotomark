@@ -24,7 +24,7 @@ var markSet;
 
 
 function make_path(name){
-	if(!name.match(/$[\/|~]/)){
+	if(!name.match(/^[\/|~]/)){
 		name = process.cwd()+"/"+name;
 	}
 	return name;
