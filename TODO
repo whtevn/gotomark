@@ -11,16 +11,10 @@ TODO: make uninstall scripts
 
 TODO: test uninstall, install, and upgrade
 
-TODO: add -n command to get the mark name for this directory
-
 TODO: find problem with install script through npm on node<0.10.12
-
 
 TODO: keep track of how many times each marker is accessed
 			- kill the sections in the bash_profile with comments
-
-TODO: add ability to add files as locations to mark
-      - open with env.editor
 
 TODO: make code not terrible? it is really terrible.
 
