@@ -1,0 +1,3 @@
+if [ -f ~/.gotomark/profile.sh ]; then
+	source ~/.gotomark/profile.sh 
+fi
