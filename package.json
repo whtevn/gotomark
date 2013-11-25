@@ -33,6 +33,7 @@
   "scripts": {
     "postinstall": "./install.js",
     "postuninstall": "./uninstall.js"
+    "postupdate": "./uninstall.js"
   },
   "dependencies": {
     "optimist": "~0.6.0"
