@@ -11,8 +11,13 @@ fs.mkdir(markdir, function(e){
 	copyFile(installer, markdir+"/profile.sh", function(){
 		fs.readFile(profile_update, {encoding: 'utf8'}, function(err, data){
 			fs.createWriteStream(profile, {'flags': 'a'}).write(data, 'utf8', function(err, data){
-				fs.chown(markdir, +(process.env.SUDO_UID), +(process.env.SUDO_GID));
-				fs.chown(markdir+"/profile.sh", +(process.env.SUDO_UID), +(process.env.SUDO_GID));
+				fs.chownSync(markdir, +(process.env.SUDO_UID), +(process.env.SUDO_GID));
+				fs.chownSync(markdir+"/profile.sh", +(process.env.SUDO_UID), +(process.env.SUDO_GID));
+				fs.exists(homedir+"/.marked_destinations", function(exists){
+					if(exists){
+						fs.rename(homedir+"/.marked_destinations", markdir+"/marked_destinations");
+					}
+				});
 				if(err) throw(err);
 				console.log("\n#######################################\n#");
 				console.log("# Installation Success, I presume\n#");
