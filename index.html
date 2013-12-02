@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Gotomark : command line program for marking directories from the command line for quick and easy access" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Gotomark</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/whtevn/gotomark">View on GitHub</a>
+
+          <h1 id="project_title">Gotomark</h1>
+          <h2 id="project_tagline">command line program for marking directories from the command line for quick and easy access</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/whtevn/gotomark/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/whtevn/gotomark/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="gotomark" class="anchor" href="#gotomark"><span class="octicon octicon-link"></span></a>gotomark</h1>
+
+<p>command line program for marking directories for quick and easy access</p>
+
+<pre><code>npm install gotomark -g
+</code></pre>
+
+<p>This will alter your ~/.bash_profile. To use gotomark you must either close and re-open your terminal or run this command</p>
+
+<pre><code>source ~/.bash_profile
+</code></pre>
+
+<p>After which you will have two new commands available to you: mark and goto. Both take an optional single argument denoting the short name of the place you would like to mark or goto. </p>
+
+<p>basic usage: </p>
+
+<pre><code>mark [place]
+goto [place]
+</code></pre>
+
+<p>list marks</p>
+
+<pre><code>mark -l
+goto -l      # these do the same thing
+</code></pre>
+
+<p>delete mark</p>
+
+<pre><code>mark -d [markName]  # mark name has to be exact
+
+mark -d             # find the markname for the current directory and delete it
+</code></pre>
+
+<p>ex:</p>
+
+<pre><code>evan@~$ cd dev/                      # currently in home dir
+
+evan@dev$ mark                       # marking dev/ as default
+
+evan@dev$ cd                         # going back to home dir
+
+evan@~$ goto                         # going to default [~/dev/]
+
+evan@dev$ cd gotomark/               # going to a new dir
+
+evan@gotomark (master)$ mark gm      # marking as 'gm'
+
+evan@gotomark (master)$ cd           # leaving directory
+
+evan@~$ goto gm                      # going to 'gm'
+
+evan@gotomark (master)$ pwd          # showing in new dir
+/Users/evan/dev/gotomark
+</code></pre>
+
+<p>==Thanks to</p>
+
+<p>Options parsing
+<a href="https://github.com/substack/node-optimist">https://github.com/substack/node-optimist</a></p>
+
+<p>Bash Completion
+<a href="http://fahdshariff.blogspot.com/2011/04/writing-your-own-bash-completion.html">http://fahdshariff.blogspot.com/2011/04/writing-your-own-bash-completion.html</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Gotomark maintained by <a href="https://github.com/whtevn">whtevn</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
