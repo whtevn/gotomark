@@ -5,9 +5,9 @@ var argv = require('optimist')
 		alias: 'list'}).argv;
 
 var fs = require('fs');
-var homedir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
+var homedir = (process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE)+"/.gotomark";
 var markName=argv._[0]||"default";
-var markFile=homedir+"/.marked_destinations";
+var markFile=homedir+"/marked_destinations";
 var markTest, markSet, markMatches = [], findPattern, foundSet = [];
 
 
