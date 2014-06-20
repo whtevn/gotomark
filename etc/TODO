@@ -13,6 +13,10 @@ TODO: test uninstall, install, and upgrade
 
 TODO: find problem with install script through npm on node<0.10.12
 
+TODO: fail nicer if someone screws up the marked_destinations file
+
+TODO: make config folder, look for it in .bash_profile instead of putting all that code in there
+
 TODO: keep track of how many times each marker is accessed
 			- kill the sections in the bash_profile with comments
 
