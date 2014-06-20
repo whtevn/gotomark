@@ -6,13 +6,16 @@ var profile=homedir+"/.bash_profile";
 var profile_update='./etc/bash_profile';
 var installer='./etc/profile_update';
 var markdir = homedir+"/.gotomark"; 
+var uid, gid;
 
 fs.mkdir(markdir, function(e){
 	copyFile(installer, markdir+"/profile.sh", function(){
 		fs.readFile(profile_update, {encoding: 'utf8'}, function(err, data){
 			fs.createWriteStream(profile, {'flags': 'a'}).write(data, 'utf8', function(err, data){
-				fs.chownSync(markdir, +(process.env.SUDO_UID), +(process.env.SUDO_GID));
-				fs.chownSync(markdir+"/profile.sh", +(process.env.SUDO_UID), +(process.env.SUDO_GID));
+				uid = process.env.SUDO_UID || process.getuid()
+				gid = process.env.SUDO_GID || process.getgid()
+				fs.chownSync(markdir, +(uid), +(gid));
+				fs.chownSync(markdir+"/profile.sh", +(uid), +(gid));
 				fs.exists(homedir+"/.marked_destinations", function(exists){
 					if(exists){
 						fs.rename(homedir+"/.marked_destinations", markdir+"/marked_destinations");
