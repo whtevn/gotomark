@@ -18,7 +18,7 @@ rl.question("What is your shell's profile called? (default: .bash_profile)\n", f
 	profile = homedir+"/"+profile;
 	console.log("Using profile at " + profile);
 	fs.mkdir(markdir, function(e){
-		fs.createWriteStream(profile_loc, {'flags': 'a'}).write(profile, 'utf8', function(err, data){
+		fs.createWriteStream(profile_loc, {'flags': 'w'}).write(profile, 'utf8', function(err, data){
 			if(err) throw(err);
 			copyFile(installer, markdir+"/profile.sh", function(){
 				fs.readFile(profile_add, {encoding: 'utf8'}, function(err, data){
