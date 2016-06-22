@@ -1,40 +1,42 @@
 {
-  "name": "gotomark",
-  "author": "Evan Short",
-  "description": "command line program that marks directories for quick and easy access",
-  "contributors": [{
-    "name": "Matthew Ess",
-    "email": "matthew@schooldatebooks.com"
-  }],
-  "version": "0.9.4",
-  "bin": {
-    "mark": "./bin/mark",
-    "dogoto": "./bin/dogoto"
-  },
-  "preferGlobal": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/whtevn/gotomark.git"
-  },
-  "bugs": {
-    "url": "https://github.com/whtevn/gotomark/issues"
-  },
-  "license": "MIT",
-  "engines": {
-    "node": ">=0.8.26"
-  },
-  "keywords": [
-    "cli",
-    "shortcut",
-    "utility",
-    "tool"
-  ],
-  "scripts": {
-    "postinstall": "./install.js",
-    "postuninstall": "./uninstall.js",
-    "postupdate": "./uninstall.js"
-  },
-  "dependencies": {
-    "optimist": "~0.6.0"
-  }
+	"name": "gotomark",
+	"author": "Evan Short",
+	"description": "command line program that marks directories for quick and easy access",
+	"contributors": [
+		{
+			"name": "Matthew Ess",
+			"email": "matthew@schooldatebooks.com"
+		}
+	],
+	"version": "0.9.5",
+	"bin": {
+		"mark": "./bin/mark",
+		"dogoto": "./bin/dogoto"
+	},
+	"preferGlobal": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/whtevn/gotomark.git"
+	},
+	"bugs": {
+		"url": "https://github.com/whtevn/gotomark/issues"
+	},
+	"license": "MIT",
+	"engines": {
+		"node": ">=0.8.26"
+	},
+	"keywords": [
+		"cli",
+		"shortcut",
+		"utility",
+		"tool"
+	],
+	"scripts": {
+		"postinstall": "./install.js",
+		"postuninstall": "./uninstall.js",
+		"postupdate": "./uninstall.js"
+	},
+	"dependencies": {
+		"optimist": "~0.6.0"
+	}
 }
