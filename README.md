@@ -5,9 +5,10 @@ command line program for marking directories for quick and easy access
 
 	npm install gotomark -g
 
-This will alter your ~/.bash_profile. To use gotomark you must either close and re-open your terminal or run this command
+The installer will ask you what your shell profile is called, defaulting to .bash_profile. This location
+is saved within the ~/.gotomark folder. When the installer is finished, source your profile:
 
-	source ~/.bash_profile
+`$ source ~/<profile name>`
 
 After which you will have two new commands available to you: mark and goto. Both take an optional single argument denoting the short name of the place you would like to mark or goto. 
 

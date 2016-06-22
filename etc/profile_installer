@@ -1,0 +1,29 @@
+
+################## added by gotomark ################
+#                                                   #
+###### attaches goto command to dogoto printer ######
+#                                                   #
+    function __goto {                               #
+      local loc=`dogoto "$@"`                       #
+      if [ -d "$loc" ]; then                        #                     
+        cd $loc                                     #          
+      fi                                            #  
+                                                    #
+      if [ -f "$loc" ]; then                        #
+        $EDITOR $loc                                #
+      fi                                            #
+    }                                               #
+    alias goto=__goto                               #
+#                                                   #
+########## bash completion for goto command #########
+#                                                   #
+    function _goto {                                #
+      local cur=${COMP_WORDS[COMP_CWORD]}           #
+      local opts=`dogoto -m`                        #
+      COMPREPLY=( $(compgen -W "$opts"  -- $cur) )  #
+    }                                               #
+    complete -F _goto goto                          #
+#                                                   #
+#####################################################
+###### https://github.com/whtevn/gotomark ###########
+#####################################################

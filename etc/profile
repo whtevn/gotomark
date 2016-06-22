@@ -4,8 +4,9 @@
 ##### loads gotomark preferences if file exists #####
 #                                                   #
        if [ -f ~/.gotomark/profile.sh ]; then       #
-	       source ~/.gotomark/profile.sh              #
-			 fi                                           #
+         source ~/.gotomark/profile.sh              #
+         export GOTOMARK=INSTALLED                  #
+       fi                                           #
 #                                                   #
 #####################################################
 ###### https://github.com/whtevn/gotomark ###########
