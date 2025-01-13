@@ -11,6 +11,17 @@ command line program for marking directories for quick and easy access
 
 ```
 
+or for zsh
+
+```bash
+
+    curl -sSL https://raw.githubusercontent.com/whtevn/gotomark/refs/heads/master/gotomark.sh -o ~/.gotomark.sh
+    echo 'source ~/.gotomark.sh' >> ~/.zshrc
+    source ~/.zshrc
+
+```
+
+
 After which you will have two new commands available to you: mark and goto. Both take an optional single argument denoting the short name of the place you would like to mark or goto. 
 
 basic usage: 
